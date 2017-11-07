@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 21
+        versionCode 3310
+        versionName "3.3.1"
+
+    }
+
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "opencv-android-${defaultConfig.versionName}.aar"
+        }
+    }
+
+}
