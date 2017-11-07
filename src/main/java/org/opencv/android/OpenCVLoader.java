@@ -1,7 +1,5 @@
 package org.opencv.android;
 
-import android.content.Context;
-
 /**
  * Helper class provides common initialization methods for OpenCV library.
  */
@@ -112,16 +110,4 @@ public class OpenCVLoader
         return StaticHelper.initOpenCV(InitCuda);
     }
 
-    /**
-     * Loads and initializes OpenCV library using OpenCV Engine service.
-     * @param Version OpenCV library version.
-     * @param AppContext application context for connecting to the service.
-     * @param Callback object, that implements LoaderCallbackInterface for handling the connection status.
-     * @return Returns true if initialization of OpenCV is successful.
-     */
-    public static boolean initAsync(String Version, Context AppContext,
-            LoaderCallbackInterface Callback)
-    {
-        return AsyncServiceHelper.initOpenCV(Version, AppContext, Callback);
-    }
 }
